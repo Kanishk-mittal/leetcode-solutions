@@ -1,0 +1,29 @@
+# include <iostream>    
+# include <vector>
+using namespace std;
+class Solution
+{
+public:
+    bool isSubsequence(string s, string t)
+    {
+        int pos1 = 0;
+        int pos2 = 0;
+        while (pos1 < s.size() && pos2 < t.size())
+        {
+            if (s[pos1] == t[pos2])
+            {
+                pos1++;
+                pos2++;
+            }
+            else
+            {
+                pos2++;
+            }
+        }
+        if (pos1 == s.size())
+        {
+            return true;
+        }
+        return false;
+    }
+};
