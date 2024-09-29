@@ -6,6 +6,7 @@
         "unordered_set": "cpp",
         "string": "cpp",
         "xutility": "cpp",
-        "ios": "cpp"
+        "ios": "cpp",
+        "unordered_map": "cpp"
     }
 }
