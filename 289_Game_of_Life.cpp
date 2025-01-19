@@ -30,7 +30,6 @@ public:
             for (int j = 0; j < board[i].size(); j++)
             {
                 int liveNeighbors = countLive(board, i, j);
-
                 if (board[i][j] == 1 && (liveNeighbors < 2 || liveNeighbors > 3))
                 {
                     swap_index.push_back({i, j});
