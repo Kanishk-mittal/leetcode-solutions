@@ -6,4 +6,5 @@
 *.exe
 
 # Additional file to clear executable files
-clearexe.py
+clearexe.py# Ignore compiled C++ output\n*\n/mnt/files/Leetcode/clean.py.*
+clean.py
