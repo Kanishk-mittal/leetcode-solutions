@@ -8,3 +8,6 @@
 # Additional file to clear executable files
 clearexe.py# Ignore compiled C++ output\n*\n/mnt/files/Leetcode/clean.py.*
 clean.py
+
+# ignore personal contest folder 
+/contest/
