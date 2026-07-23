@@ -39,7 +39,7 @@ public:
 int main()
 {
     Solution sol;
-    vector<int> nums = {6, 7, 8, 9};
+    vector<int> nums = {6, 7, 8, 9, 10};
     cout << sol.uniqueXorTriplets(nums);
     return 0;
 }
