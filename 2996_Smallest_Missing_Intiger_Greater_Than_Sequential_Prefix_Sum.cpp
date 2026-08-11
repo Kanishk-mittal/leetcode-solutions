@@ -1,0 +1,31 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution
+{
+public:
+    int missingInteger(vector<int> &nums)
+    {
+        int n = nums.size();
+        int sum = nums[0];
+        int i = 1;
+        while (i < n && nums[i] == nums[i - 1] + 1)
+        {
+            sum += nums[i];
+            i++;
+        }
+        sort(nums.begin(), nums.end());
+        while (binary_search(nums.begin(), nums.end(), sum))
+        {
+            sum += 1;
+        }
+        return sum;
+    }
+};
+
+int main()
+{
+    Solution sol;
+    return 0;
+}
