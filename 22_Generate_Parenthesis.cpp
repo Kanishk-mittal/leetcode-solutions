@@ -5,34 +5,35 @@
 
 using namespace std;
 
-class Solution
-{
+class Solution {
+private:
+    void build(set<string>& result, string & curr, int opening, int closing){
+        if (opening==0 && closing ==0)
+        {
+            result.insert(curr);
+        }
+        if (opening)
+        {
+            opening--;
+            curr.push_back('(');
+            build(result, curr, opening, closing);
+            curr.pop_back();
+            opening++;
+        }
+        if (closing && closing>opening)
+        {
+            closing --;
+            curr.push_back(')');
+            build(result, curr, opening, closing);
+            closing++;
+            curr.pop_back();
+        }
+    }
 public:
-    vector<string> generateParenthesis(int n)
-    {
+    vector<string> generateParenthesis(int n) {
         set<string> result;
-        if (n == 0)
-        {
-            result.insert("");
-        }
-        else
-        {
-            vector<string> prev = generateParenthesis(n - 1);
-            for (string str : prev)
-            {
-                for (int i = 0; i < str.size(); i++)
-                {
-                    if (str[i] == '(')
-                    {
-                        str.insert(str.begin() + i + 1, '(');
-                        str.insert(str.begin() + i + 2, ')');
-                        result.insert(str);
-                        str.erase(str.begin() + i + 1, str.begin() + i + 3);
-                    }
-                }
-                result.insert("()" + str);
-            }
-        }
+        string curr="";
+        build(result,curr,n,n);
         return vector<string>(result.begin(), result.end());
     }
 };
